@@ -1,0 +1,213 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VINCERE | Custom Furniture</title>
+    <link rel="icon" type="image/x-icon" href="../src/favicon/favicon-32x32.png">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="../Navbar/Navbar.css">
+    <link rel="stylesheet" href="../Statusbar/Statusbar.css">
+    <link rel="stylesheet" href="Home.css">
+    
+</head>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+</style>
+
+<body>
+
+    <div id="statusbar"></div>
+    </div>
+    
+    
+
+    <!-- Navbar -->
+    <div id="navbar"></div>
+
+
+    <!-- Hero Element -->
+    <div class="hero">
+        <div class="overlay"></div> 
+        <div class="hero-element">
+            <p class="hero-title">VINCERE</p>
+
+        </div>
+
+    </div>
+
+
+     <!-- Projects -->
+     <div class="projects-box">
+
+        <p class="projects-headder">Projects</p>
+        
+        <div class="projects-item">
+            <div class="projects-text" data-image="../src/Projects/Hero-image.webp"> ~&nbsp;&nbsp;&nbsp;&nbsp;Luxe Enclave </div>
+        </div>
+    
+        
+        <div class="projects-item">
+            <div class="projects-text" data-image="../src/Projects/Hero-image-2.webp"> ~&nbsp;&nbsp;&nbsp;&nbsp;Opulent Oasis</div>
+        </div>
+    
+        
+        <div class="projects-item">
+            <div class="projects-text" data-image="../src/Projects/Hero-image-3.webp">~&nbsp;&nbsp;&nbsp;&nbsp;Bespoke Bliss </div>
+        </div>
+    
+        
+        <div class="projects-item">
+            <div class="projects-text" data-image="../src/Projects/Hero-image-4.webp">~&nbsp;&nbsp;&nbsp;&nbsp;Aesthetic Allure</div>
+        </div>
+    
+        
+        <div class="projects-popup">
+            <img id="popup-image" src="" alt="Popup Image">
+        </div>
+    </div>
+
+
+    <!-- Services -->
+
+    <p class="projects-headder">Services</p>
+
+    
+    <div class="services">
+        <div class="service-design">
+            <div class="service-number">
+                01
+            </div>
+            <div class="service-title">
+                Design Consultation
+            </div>
+            <div class="service-description">
+                Work with our designers to customize your furniture piece to your exact specifications.
+            </div>
+        </div>
+    
+        <div class="service-order">
+            <div class="service-number">
+                02
+            </div>
+            <div class="service-title">
+                Custom Ordering
+            </div>
+            <div class="service-description">
+                Choose from a wide range of materials, finishes, and dimensions to create your perfect piece.
+            </div>
+        </div>
+    
+        <div class="service-delivery">
+            <div class="service-number">
+                03
+            </div>
+            <div class="service-title">
+                White Glove Delivery
+            </div>
+            <div class="service-description">
+                We deliver, assemble, and ensure your furniture is placed exactly as you want it.
+            </div>
+        </div>
+    </div>
+    
+    
+
+
+
+    <!-- Banner -->
+    <div class="banner">
+        <h1 class="banner-message">
+            We bridge the gap between design and development. Got a project in the pipeline?
+        </h1>
+        
+        
+        <a href="https://wa.me/1234567890?text=Hey%20Vincere,%20I%20was%20browsing%20your%20website.%20I%20would%20like%20to%20get%20into%20contact%20with%20you...
+        ">
+        <button class="banner-button">
+            Whatsapp 
+        </button>
+
+    </a>
+
+
+        <br>
+
+        
+    </div>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+
+
+
+    <script>
+
+        // Proejcts
+        document.querySelectorAll('.projects-item').forEach(item => {
+        item.addEventListener('mouseenter', function (event) {
+        const imageSrc = this.querySelector('.projects-text').getAttribute('data-image');
+        const popup = document.querySelector('.projects-popup');
+        const popupImage = document.getElementById('popup-image');
+
+        
+        popupImage.src = imageSrc;
+
+        
+        popup.style.display = 'block';
+
+        
+        function movePopup(event) {
+            const offset = 10; 
+            popup.style.left = `${event.pageX + offset}px`;
+            popup.style.top = `${event.pageY + offset}px`;
+        }
+
+        
+        document.addEventListener('mousemove', movePopup);
+
+       
+        this.addEventListener('mouseleave', function () {
+            popup.style.display = 'none';
+            document.removeEventListener('mousemove', movePopup);
+        });
+
+    });
+});
+
+
+
+fetch('../Statusbar/Statusbar.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('statusbar').innerHTML = data;
+        })
+        .catch(error => console.error('Error loading statusbar:', error));
+
+        fetch('../Navbar/Navbar.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('navbar').innerHTML = data;
+        })
+        .catch(error => console.error('Error loading navbar:', error));
+
+        fetch('../Footer/Footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer').innerHTML = data;
+        })
+        .catch(error => console.error('Error loading footer:', error));
+
+
+
+</script>
+
+<script src="../Statusbar/Statusbar.js"></script>
+<script src="../Navbar/Navbar.js"></script>
+<script src="../Footer/Footer.js"></script>
+
+</body>
+</html>

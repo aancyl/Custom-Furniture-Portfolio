@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VINCERE Navbar</title>
+    <link rel="stylesheet" href="Navbar.css">
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="navbar-logo">
+            <p class="navbar-bethany">
+                <a href="../Home/Home.html">VINCERE</a>
+            </p>
+        </div>
+        <div class="navbar-links" id="navbarLinks">
+            <ul>
+                <li><a href="../Home/Home.html">Home</a></li>
+                <li><a href="../About/About.html">About</a></li>
+                <li><a href="../Clients/Clients.html">Clients</a></li>
+                <li><a href="../ContactUs/ContactUs.html">Contact Us</a></li>
+                <li><a href="../FAQs/FAQs.html">FAQ</a></li>
+            </ul>
+        </div>
+        
+        
+        <a href="../assets/portfolio.pdf" download="Vincere_Portfolio.pdf" class="navbar-portfolio-button">
+            P O R T F O L I O
+        </a>
+        
+        <button class="hamburger" onclick="toggleMenu()">☰</button>
+    </div>
+    
+
+    <div id="overlay" class="overlay">
+        <div class="overlay-content">
+            <a href="../Home/Home.html">Home</a>
+            <a href="../About/About.html">About</a>
+            <a href="../Clients/Clients.html">Clients</a>
+            <a href="../ContactUs/ContactUs.html">Contact Us</a>
+            <a href="../FAQs/FAQs.html">FAQ</a>
+            <a href="../assets/portfolio.pdf" download="Vincere_Portfolio.pdf">Portfolio</a>
+            <button class="closebtn" onclick="toggleMenu()">&times;</button>
+        </div>
+    </div>
+
+    <script href="./Navbar.js">
+        function toggleMenu() {
+            var overlay = document.getElementById("overlay");
+            if (overlay.style.height === "100%") {
+                overlay.style.height = "0%";
+            } else {
+                overlay.style.height = "100%";
+            }
+        }
+    </script>
+</body>
+</html>

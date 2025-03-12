@@ -1,0 +1,131 @@
+html {
+    scroll-behavior: smooth;
+}
+
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+.faq-main-layout{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: white;
+}
+
+
+
+.faq-card{
+    cursor:auto;
+    border-radius: 1px;
+    position: relative;
+    padding: 5rem;
+}
+
+.faq-header {
+    font-style: italic;
+    font-size: 4rem;
+    
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(19,19,19);
+
+    font-weight: 100;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+
+/* FAQ Items */
+.faq-section-headder{
+    font-style: italic;
+    padding-top: 4rem;
+    padding-bottom: 1.5rem;
+    margin-top: 4vh;
+    font-size: 3rem;
+    font-weight: 100;
+    border-bottom: 2px solid grey;
+    margin: 1.5rem;
+}
+
+.underline{
+    padding: 0rem 0rem;
+    font-size: 3rem;
+    font-weight: 100;
+}
+
+.faq-item {
+    background-color: white;
+    margin-bottom: 1.5rem;
+    border-radius: 1px;
+    padding-left: 5rem;
+    padding: 1rem 2rem;
+    font-weight: 100;
+    border: 1px solid rgb(228, 226, 226);
+    box-shadow: 0 4px 8px white;
+    transition: all 0.9s ease;
+}
+
+.faq-item:hover {
+    box-shadow: 0 8px 16px white;
+}
+
+
+/* FAQ Question */
+.faq-question {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-weight: bold;
+    color: black;
+    font-weight:lighter;
+    font-size: 1.2rem;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+.faq-toggle {
+    font-size: 2rem;
+    color: black;
+    padding-right: 1rem;
+    transition: transform 0.3s ease;
+    font-weight: bold;
+}
+
+.faq-answer {
+    padding-left: 2rem;
+    display: none;
+    color: black;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+}
+
+/* Active state */
+.faq-item.active .faq-answer {
+    display: block;
+}
+
+.faq-item.active .faq-toggle {
+    transform:scale(0.8);
+    color: rgb(19,19,19);
+    font-weight: lighter;
+}
+
+@media screen and (max-width: 780px) {
+
+    .faq-header{
+        margin:2rem 0rem;
+    }
+    .faq-card{
+        padding: 1rem;
+    }
+
+    .faq-section-headder{
+        padding-top: 4rem;
+        margin-left: 1rem;
+        padding-left: 1rem;
+        font-size: 2rem;
+    }
+}

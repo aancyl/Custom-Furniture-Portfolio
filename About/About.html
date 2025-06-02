@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="icon" type="image/x-icon" href="src/favicon/favicon-32x32.png">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="About/About.css">
+    <link rel="stylesheet" href="Statusbar/Statusbar.css">
+    <link rel="stylesheet" href="Navbar/Navbar.css">
+    <link rel="stylesheet" href="Footer/Footer.css"
+</head>
+<body>
+
+    <div id="statusbar"></div>
+    <div id="navbar"></div>
+
+    <div class="about">
+
+        <div class="about-hero-our-why">
+            <div class="our-why-text">
+                <p class="our-why-headder">Our Why</p>
+                <p class="our-why-description">At Vincere, we believe in crafting furniture that embodies timeless elegance, individuality, and functionality. We aim to transform living spaces into reflections of personal style and lasting quality.</p>
+            </div>
+
+            <div class="our-why-image">
+                <img src="src/About/About-Our-Why.webp" alt="About-Our-Why Image">
+            </div>
+        </div>
+
+        <div class="about-our-approach">
+            <div class="our-approach-image">
+                <img src="src/About/About-Our-Approach.webp" alt="About-Our-Approach Image">
+            </div>
+            <div class="our-approach-text">
+                <p class="our-approach-headder">Our Approach</p>
+                <p class="our-approach-description">We blend innovative design, premium materials, and expert craftsmanship to create custom pieces that suit your unique vision. Every detail is meticulously tailored to ensure both beauty and durability.</p>
+            </div>
+        </div>
+
+        <div class="about-our-mission">
+            <div class="our-mission-text">
+                <p class="our-mission-headder">Our Mission</p>
+                <p class="our-mission-description">To create bespoke furniture that elevates everyday living. At Vincere, we strive to exceed expectations by delivering exceptional quality and design, ensuring each piece becomes a treasured part of your home.</p>
+            </div>
+
+            <div class="our-mission-image">
+                <img src="src/About/About-Our-Mission.webp" alt="About-Our-Mission Image">
+            </div>
+        </div
+
+        
+
+    </div>
+
+    <div id="footer"></div>
+
+    <script>
+        fetch('Statusbar/Statusbar.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('statusbar').innerHTML = data;
+        })
+        .catch(error => console.error('Error loading statusbar:', error));
+
+        fetch('Navbar/Navbar.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('navbar').innerHTML = data;
+        })
+        .catch(error => console.error('Error loading navbar:', error));
+
+
+        fetch('Footer/Footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer').innerHTML = data;
+        })
+        .catch(error => console.error('Error loading footer:', error));
+    </script>
+
+    <script src="Statusbar/Statusbar.js"></script>
+    <script src="Navbar/Navbar.js"></script>
+    <script src="Footer/Footer.js"></script>
+</body>
+</html>

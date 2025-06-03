@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VINCERE | Custom Furniture</title>
-    <link rel="icon" type="image/x-icon" href="./src/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/x-icon" href="src/favicon/favicon-32x32.png">
     <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="stylesheet" href="./Navbar/Navbar.css">
-    <link rel="stylesheet" href="./Statusbar/Statusbar.css">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="/Navbar/Navbar.css">
+    <link rel="stylesheet" href="/Statusbar/Statusbar.css">
+    <link rel="stylesheet" href="/Home.css">
+    
 </head>
 
 <style>
@@ -179,7 +180,7 @@
 
 
 
-fetch('Statusbar/Statusbar.html')
+fetch('/Statusbar/Statusbar.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('statusbar').innerHTML = data;
@@ -204,9 +205,9 @@ fetch('Statusbar/Statusbar.html')
 
 </script>
 
-<script src="Statusbar/Statusbar.js"></script>
-<script src="Navbar/Navbar.js"></script>
-<script src="Footer/Footer.js"></script>
+<script src="/Statusbar/Statusbar.js"></script>
+<script src="/Navbar/Navbar.js"></script>
+<script src="/Footer/Footer.js"></script>
 
 </body>
 </html>

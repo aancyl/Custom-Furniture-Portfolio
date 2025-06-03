@@ -5,12 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VINCERE | Custom Furniture</title>
-    <link rel="icon" type="image/x-icon" href="../src/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/x-icon" href="./src/favicon/favicon-32x32.png">
     <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="stylesheet" href="../Navbar/Navbar.css">
-    <link rel="stylesheet" href="../Statusbar/Statusbar.css">
-    <link rel="stylesheet" href="Home.css">
-    
+    <link rel="stylesheet" href="./Navbar/Navbar.css">
+    <link rel="stylesheet" href="./Statusbar/Statusbar.css">
+    <link rel="stylesheet" href="index.css">
 </head>
 
 <style>
@@ -45,22 +44,22 @@
         <p class="projects-headder">Projects</p>
         
         <div class="projects-item">
-            <div class="projects-text" data-image="../src/Projects/Hero-image.webp"> ~&nbsp;&nbsp;&nbsp;&nbsp;Luxe Enclave </div>
+            <div class="projects-text" data-image="src/Projects/Hero-image.webp"> ~&nbsp;&nbsp;&nbsp;&nbsp;Luxe Enclave </div>
         </div>
     
         
         <div class="projects-item">
-            <div class="projects-text" data-image="../src/Projects/Hero-image-2.webp"> ~&nbsp;&nbsp;&nbsp;&nbsp;Opulent Oasis</div>
+            <div class="projects-text" data-image="src/Projects/Hero-image-2.webp"> ~&nbsp;&nbsp;&nbsp;&nbsp;Opulent Oasis</div>
         </div>
     
         
         <div class="projects-item">
-            <div class="projects-text" data-image="../src/Projects/Hero-image-3.webp">~&nbsp;&nbsp;&nbsp;&nbsp;Bespoke Bliss </div>
+            <div class="projects-text" data-image="src/Projects/Hero-image-3.webp">~&nbsp;&nbsp;&nbsp;&nbsp;Bespoke Bliss </div>
         </div>
     
         
         <div class="projects-item">
-            <div class="projects-text" data-image="../src/Projects/Hero-image-4.webp">~&nbsp;&nbsp;&nbsp;&nbsp;Aesthetic Allure</div>
+            <div class="projects-text" data-image="src/Projects/Hero-image-4.webp">~&nbsp;&nbsp;&nbsp;&nbsp;Aesthetic Allure</div>
         </div>
     
         
@@ -180,21 +179,21 @@
 
 
 
-fetch('../Statusbar/Statusbar.html')
+fetch('Statusbar/Statusbar.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('statusbar').innerHTML = data;
         })
         .catch(error => console.error('Error loading statusbar:', error));
 
-        fetch('../Navbar/Navbar.html')
+        fetch('Navbar/Navbar.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('navbar').innerHTML = data;
         })
         .catch(error => console.error('Error loading navbar:', error));
 
-        fetch('../Footer/Footer.html')
+        fetch('Footer/Footer.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('footer').innerHTML = data;
@@ -205,9 +204,9 @@ fetch('../Statusbar/Statusbar.html')
 
 </script>
 
-<script src="../Statusbar/Statusbar.js"></script>
-<script src="../Navbar/Navbar.js"></script>
-<script src="../Footer/Footer.js"></script>
+<script src="Statusbar/Statusbar.js"></script>
+<script src="Navbar/Navbar.js"></script>
+<script src="Footer/Footer.js"></script>
 
 </body>
 </html>

@@ -1,0 +1,28 @@
+
+
+*{
+    padding: 0px;
+    margin: 0px;
+}
+.statusbar {
+    display: flex;
+    align-items: center;
+    height: 30px; 
+    background-color: rgb(218, 218, 218); 
+    border-bottom: 1px solid black;
+}
+
+.statusbar-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; 
+}
+
+.message {
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 100;
+    font-size: 15px;
+    margin: 0; 
+}

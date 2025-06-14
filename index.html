@@ -141,68 +141,64 @@
     <!-- Footer -->
     <div id="footer"></div>
 
-
-
-
     <script>
-
-        // Proejcts
-        document.querySelectorAll('.projects-item').forEach(item => {
+    // Projects
+    document.querySelectorAll('.projects-item').forEach(item => {
         item.addEventListener('mouseenter', function (event) {
-        const imageSrc = this.querySelector('.projects-text').getAttribute('data-image');
-        const popup = document.querySelector('.projects-popup');
-        const popupImage = document.getElementById('popup-image');
+            const imageSrc = this.querySelector('.projects-text').getAttribute('data-image');
+            const popup = document.querySelector('.projects-popup');
+            const popupImage = document.getElementById('popup-image');
 
-        
-        popupImage.src = imageSrc;
+            popupImage.src = imageSrc;
+            popup.style.display = 'block';
 
-        
-        popup.style.display = 'block';
+            function movePopup(event) {
+                const offset = 10;
 
-        
-        function movePopup(event) {
-            const offset = 10; 
-            popup.style.left = `${event.pageX + offset}px`;
-            popup.style.top = `${event.pageY + offset}px`;
-        }
+                if (window.innerWidth <= 850) {
+                    // Place below the project item
+                    const rect = item.getBoundingClientRect();
+                    popup.style.position = 'absolute';
+                    popup.style.left = `${rect.left + window.scrollX * 2}px`;
+                    popup.style.top = `${rect.bottom + window.scrollY + offset}px`;
+                } else {
+                    // Default behavior: follow mouse
+                    popup.style.position = 'absolute';
+                    popup.style.left = `${event.pageX + offset}px`;
+                    popup.style.top = `${event.pageY + offset}px`;
+                }
+            }
 
-        
-        document.addEventListener('mousemove', movePopup);
+            document.addEventListener('mousemove', movePopup);
 
-       
-        this.addEventListener('mouseleave', function () {
-            popup.style.display = 'none';
-            document.removeEventListener('mousemove', movePopup);
+            this.addEventListener('mouseleave', function () {
+                popup.style.display = 'none';
+                document.removeEventListener('mousemove', movePopup);
+            });
         });
-
     });
-});
 
-
-
-fetch('Statusbar.html')
+    // Load HTML fragments
+    fetch('Statusbar.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('statusbar').innerHTML = data;
         })
         .catch(error => console.error('Error loading statusbar:', error));
 
-        fetch('Navbar.html')
+    fetch('Navbar.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('navbar').innerHTML = data;
         })
         .catch(error => console.error('Error loading navbar:', error));
 
-        fetch('Footer.html')
+    fetch('Footer.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('footer').innerHTML = data;
         })
         .catch(error => console.error('Error loading footer:', error));
-
-
-
 </script>
 
 <script src="Statusbar.js"></script>

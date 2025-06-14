@@ -47,28 +47,22 @@ html {
     height: 100%;
     object-fit: cover; 
 }
-
 @media screen and (max-width: 768px) {
     .about-hero-our-why, .about-our-approach, .about-our-mission {
         grid-template-columns: 1fr;
-    }
-
-    .our-why-image, .our-approach-image, .our-mission-image {
-        order: -1; 
+        font-size: 0.9rem;
+        
     }
 
     .our-why-text, .our-approach-text, .our-mission-text {
-        padding: 5rem;
+        padding: 4rem 2rem 4rem 2rem;
         text-align: center;
-        line-height: -5px;
-    }
-
-    .our-why-description, .our-approach-description, .our-mission-description {
-        font-size: 0.85rem;
+        line-height: 1.3; /* FIXED: removed -5px */
     }
 
     .our-why-image, .our-approach-image, .our-mission-image {
         width: 100%; 
         height: auto;
+        order: -1;
     }
 }
